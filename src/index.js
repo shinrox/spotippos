@@ -6,7 +6,6 @@ var routesConfig = require('./routes');
 
 var main = require('./app/main');
 var header = require('./app/components/header/component');
-var footer = require('./app/components/footer/component');
 
 require('./index.scss');
 
@@ -14,7 +13,6 @@ angular
   .module('app', [spotippoModule, 'ui.router'])
   .config(routesConfig)
   .component('app', main)
-  .component('spotippoHeader', header)
-  .component('spotippoFooter', footer);
+  .component('spotippoHeader', header);
 
 angular.bootstrap(document, ['app']);

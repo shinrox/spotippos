@@ -1,0 +1,27 @@
+.spotippos-button {
+  width: 91px;
+  border-radius: 4px;
+  margin: 0 auto;
+  cursor: pointer;
+  color: $white-four;
+  padding: 10px 0;
+
+  &:hover {
+    background-color: lighten($azure, 20);
+  }
+
+  &.active {
+    background-color: $azure;
+  }
+
+  > .icon {
+    font-size: 30px;
+  }
+
+  > .text {
+    font-weight: bold;
+    font-stretch: condensed;
+    font-size: 11px;
+    margin-bottom: 0;
+  }
+}

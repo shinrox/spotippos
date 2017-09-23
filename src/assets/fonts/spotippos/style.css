@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'spotippos';
+  src:  url('fonts/spotippos.eot?7vullt');
+  src:  url('fonts/spotippos.eot?7vullt#iefix') format('embedded-opentype'),
+    url('fonts/spotippos.ttf?7vullt') format('truetype'),
+    url('fonts/spotippos.woff?7vullt') format('woff'),
+    url('fonts/spotippos.svg?7vullt#spotippos') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="spo-"], [class*=" spo-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'spotippos' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spo-building:before {
+  content: "\e900";
+  color: #fff;
+}
+.spo-ic-card-area:before {
+  content: "\e901";
+  color: #999;
+}
+.spo-ic-card-bathroom:before {
+  content: "\e902";
+  color: #999;
+}
+.spo-ic-card-beds:before {
+  content: "\e903";
+  color: #999;
+}
+.spo-logo-vivareal:before {
+  content: "\e904";
+  color: #fff;
+}
+.spo-plus-icon:before {
+  content: "\e905";
+  color: #fff;
+}

@@ -1,11 +1,10 @@
 var angular = require('angular');
+// var spotippo = require('./spotippo');
+var moduleName = 'spotippo';
+var spoButton = require('../components/spo-button/component');
 
-var spotippo = require('./spotippo');
-
-var spotippoModule = 'spotippo';
-
-module.exports = spotippoModule;
+module.exports = moduleName;
 
 angular
-  .module(spotippoModule, [])
-  .component('spotippo', spotippo);
+  .module(moduleName, [])
+  .component('spoButton', spoButton);
