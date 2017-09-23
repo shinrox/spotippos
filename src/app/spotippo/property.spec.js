@@ -1,8 +1,8 @@
 var angular = require('angular');
 require('angular-mocks');
-var spotippo = require('./spotippo');
+var property = require('./property');
 
-var spotippoJson = {
+var properties = {
   properties: [
     {
       id: 1,
@@ -29,20 +29,20 @@ var spotippoJson = {
   ]
 };
 
-describe('spotippo component', function () {
+describe('property component', function () {
   beforeEach(function () {
     angular
-    .module('spotippo', ['app/spotippo/spotippo.html'])
-    .component('spotippo', spotippo);
-    angular.mock.module('spotippo');
+    .module('property', ['app/spotippo/property.html'])
+    .component('property', property);
+    angular.mock.module('property');
   });
 
   it('should render 3 elements <li>', angular.mock.inject(function ($rootScope, $compile, $httpBackend) {
-    $httpBackend.when('GET', '/api/properties').respond(spotippoJson);
-    var element = $compile('<spotippo></spotippo>')($rootScope);
+    $httpBackend.when('GET', '/api/properties').respond(propertyJson);
+    var element = $compile('<property></property>')($rootScope);
     $httpBackend.flush();
     $rootScope.$digest();
-    var spotippo = element.find('li');
-    expect(spotippo.length).toEqual(2);
+    var property = element.find('li');
+    expect(property.length).toEqual(2);
   }));
 });

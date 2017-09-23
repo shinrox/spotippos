@@ -1,0 +1,91 @@
+.property {
+  position: relative;
+  height: 224px;
+  margin: 15px;
+  width: 100%;
+
+  border-radius: 2px;
+  background-color: $white-four;
+  box-shadow: 0 1px 3px 0 $black-30;
+
+
+  .img-wrapper {
+    width: 298px;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .info {
+    position: absolute;
+    left: 298px;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .property-id {
+    width: 64px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: $warm-grey-three;
+    border: 1px solid $white-two;
+    border-radius: 2px;
+    padding: 0px 15px;
+    margin: 0 15px;
+  }
+
+  .title {
+    width: 100%;
+    height: 27px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $greyish-brown;
+    padding: 12px 15px;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .description {
+    width: 100%;
+    height: 84px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.5;
+    color: $warm-grey;
+    padding: 12px 15px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $white-three;
+    box-shadow: 0 -1px 0 0 $black-10;
+    padding: 0 15px;
+    line-height: 25px;
+    color: $warm-grey;
+
+
+    .details {
+      color: $white-four;
+      background-color: $azure;
+      border-radius: 0;
+    }
+
+  }
+
+
+}

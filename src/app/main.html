@@ -2,15 +2,56 @@
 
 <div class="main-container">
   <div class="sidebar">
-    <spo-button text="ANÚNCIOS" icon="spo-building"></spo-button>
+    <spo-button text="ANÚNCIOS" icon="spo-building" is-active="true"></spo-button>
     <spo-button text="NOVO ANÚNCIO" icon="spo-plus-icon"></spo-button>
   </div>
 
   <div class="filters">
+    <span class="title">Filtro</span>
 
+    <form class="search form" action="" novalidate="">
+      <div class="row group">
+        <div class="column">
+          <label for="id">ID</label>
+          <input id="id" type="text" ng-model="$ctrl.params.id">
+        </div>
+
+        <div class="column">
+          <label for="squareMeters">Área</label>
+          <input id="squareMeters" type="text" ng-model="$ctrl.params.squareMeters">
+        </div>
+      </div>
+
+      <div class="row group">
+        <div class="column">
+          <label for="beds">Quartos</label>
+          <input id="beds" type="number" ng-model="$ctrl.params.beds" min="0">
+        </div>
+
+        <div class="column">
+          <label for="baths">Banheiros</label>
+          <input id="baths" type="number" ng-model="$ctrl.params.baths" min="0">
+        </div>
+      </div>
+
+
+      <div class="row group">
+        <label for="minprice row">Valor</label>
+        <div class="column">
+          <input id="minprice" type="number" ng-model="$ctrl.params.minprice" min="0.00" placeholder="Mínimo">
+        </div>
+        <div class="column">
+          <input id="maxprice" type="number" ng-model="$ctrl.params.maxprice" min="$ctrl.params.minprice" placeholder="Máximo">
+        </div>
+      </div>
+
+
+    </form>
   </div>
 
   <div class="result">
+    <property property="property" ng-repeat="property in $ctrl.properties">
 
+    </property>
   </div>
 </div>

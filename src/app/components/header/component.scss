@@ -3,27 +3,23 @@
   align-items: center;
   height: 60px;
   background-color: $water-blue;
-}
 
-.logo {
-  background-color: $azure;
-  width: 107px;
-  height: 60px;
-  font-size: 38px;
-  text-align: center;
-  line-height: 60px;
-}
+  .logo {
+    background-color: $azure;
+    width: 107px;
+    height: 60px;
+    font-size: 38px;
+    text-align: center;
+    line-height: 60px;
+  }
 
-.title {
-  width: 240px;
-  height: 28px;
-  color: $white-four;
-  margin-left: 30px;
-
-  h3 {
+  h3.title {
+    color: $white-four;
     font-size: 24px;
     font-weight: bold;
-    font-stretch: condensed;
     margin: 0;
+    margin-left: 30px;
   }
+
 }
+

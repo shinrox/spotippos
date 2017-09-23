@@ -15,6 +15,5 @@ describe('main component', function () {
     $rootScope.$digest();
     expect(element.find('spotippo-header').length).toEqual(1);
     expect(element.find('spotippo').length).toEqual(1);
-    expect(element.find('spotippo-footer').length).toEqual(1);
   }));
 });
