@@ -1,11 +1,11 @@
 var angular = require('angular');
 var property = require('./property');
 var moduleName = 'spotippo';
-var spoButton = require('../components/spo-button/component');
+var spoLink = require('../components/spo-link/component');
 
 module.exports = moduleName;
 
 angular
   .module(moduleName, [])
-  .component('spoButton', spoButton)
+  .component('spoLink', spoLink)
   .component('property', property);

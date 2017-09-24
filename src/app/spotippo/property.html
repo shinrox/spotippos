@@ -1,37 +1,34 @@
-<div class="property">
-  <div class="img-wrapper">
-    <img src="/assets/images/property.jpg"/>
-  </div>
+<div class="img-wrapper">
+  <img src="/assets/images/property.jpg"/>
+</div>
 
-  <div class="info">
-    <p class="property-id">ID. <span ng-bind="$ctrl.property.id"></span></p>
+<div class="info">
+  <p class="property-id">ID. <span ng-bind="$ctrl.property.id"></span></p>
 
-    <h3 class="title" ng-bind="$ctrl.property.title"></h3>
+  <h3 class="title" ng-bind="$ctrl.property.title"></h3>
 
-    <p class="description" ng-bind="$ctrl.property.description"></p>
+  <p class="description" ng-bind="$ctrl.property.description"></p>
 
-    <div class="footer">
-      <div class="icons">
-        <i class="spo-ic-card-area"></i> <span ng-bind="$ctrl.property.squareMeters"></span> M²
-        <i class="spo-ic-beds"></i> <span ng-bind="$ctrl.property.beds"></span> quartos
-        <i class="spo-ic-card-bathroom"></i> <span ng-bind="$ctrl.property.baths"></span> banheiros
-      </div>
-      <div class="actions">
-        <button class="details" type="button">VISUALIZAR ANÚNCIO</button>
-      </div>
+  <div class="footer">
+    <div class="icons">
+      <span class="property-attr">
+        <i class="icon spo-ic-card-area"></i>
+        <span class="text" ><span ng-bind="$ctrl.property.squareMeters" ></span> M²</span>
+      </span>
+
+      <span class="property-attr">
+        <i class="icon spo-ic-card-beds"></i>
+        <span class="text" ><span ng-bind="$ctrl.property.beds" ></span> quartos</span>
+      </span>
+
+      <span class="property-attr">
+        <i class="icon spo-ic-card-bathroom"></i>
+        <span class="text" ><span ng-bind="$ctrl.property.baths" ></span> M²</span>
+      </span>
+
+    </div>
+    <div class="actions">
+      <button class="details" type="button">VISUALIZAR ANÚNCIO</button>
     </div>
   </div>
 </div>
-
-
-<!-- {
-      id: 1,
-      title: 'Imóvel código 1, com 3 quartos e 2 banheiros.',
-      price: 643000,
-      description: 'Laboris quis quis elit commodo eiusmod qui exercitation. In laborum fugiat quis minim occaecat id.',
-      lat: 1257,
-      long: 928,
-      beds: 3,
-      baths: 2,
-      squareMeters: 61
-    }, -->

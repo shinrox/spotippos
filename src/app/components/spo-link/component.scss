@@ -1,13 +1,15 @@
-.spotippos-button {
+.link {
   width: 91px;
   border-radius: 4px;
   margin: 0 auto;
   cursor: pointer;
   color: $white-four;
   padding: 10px 0;
+  display: block;
+  margin-bottom: 5px;
 
   &:hover {
-    background-color: lighten($azure, 30);
+    background-color: lighten($azure, 20);
   }
 
   &.active {
@@ -16,12 +18,15 @@
 
   > .icon {
     font-size: 30px;
+    display: block;
   }
 
   > .text {
+    display: block;
     font-weight: bold;
     font-size: 11px;
     margin-bottom: 0;
+    line-height: 25px;
   }
 }
 

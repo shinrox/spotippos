@@ -1,7 +1,7 @@
-.property {
+property {
   position: relative;
   height: 224px;
-  margin: 15px;
+  margin-bottom: 15px;
   width: 100%;
 
   border-radius: 2px;
@@ -25,7 +25,8 @@
     left: 298px;
     right: 0;
     top: 0;
-    height: 100%;
+    bottom: 0;
+    padding: 15px;
   }
 
   .property-id {
@@ -38,8 +39,6 @@
     color: $warm-grey-three;
     border: 1px solid $white-two;
     border-radius: 2px;
-    padding: 0px 15px;
-    margin: 0 15px;
   }
 
   .title {
@@ -48,7 +47,6 @@
     font-size: 18px;
     line-height: 1.5;
     color: $greyish-brown;
-    padding: 12px 15px;
     text-overflow: ellipsis;
     width: 100%;
     overflow: hidden;
@@ -64,19 +62,20 @@
     overflow: hidden;
     line-height: 1.5;
     color: $warm-grey;
-    padding: 12px 15px;
   }
 
   .footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
     height: 50px;
-    background-color: $white-three;
-    box-shadow: 0 -1px 0 0 $black-10;
-    padding: 0 15px;
+    padding-left: 15px;
     line-height: 25px;
+    background-color: $white-three;
     color: $warm-grey;
+    display: flex;
+    align-items: center;
 
 
     .details {
@@ -86,6 +85,39 @@
     }
 
   }
+
+  .icons {
+    flex: 3;
+    flex-direction: column;
+  }
+
+  .actions {
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .property-attr {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: inline-block;
+    margin-bottom: 5px;
+
+    > .icon {
+      font-size: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    > .text {
+      display: block;
+      font-weight: bold;
+      font-size: 11px;
+      margin-bottom: 0;
+      line-height: 25px;
+    }
+  }
+
 
 
 }

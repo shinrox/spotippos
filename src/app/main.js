@@ -7,15 +7,34 @@ module.exports = {
 function Controller($http) {
   var $ctrl = this;
 
-  $ctrl.params = {
-    minprice: 0
+  $ctrl.getById = function () {
+    if ($ctrl.id > 0) {
+      $http({
+        method: 'GET',
+        url: '/api/properties/' + $ctrl.id
+      }).then(function (res) {
+        $ctrl.data = res.data;
+        $ctrl.properties = [$ctrl.data];
+      });
+    } else {
+      $ctrl.search();
+    }
   };
 
-  $http({
-    method: 'GET',
-    url: '/api/properties?page=0'
-  }).then(function (res) {
-    $ctrl.data = res.data;
-    $ctrl.properties = $ctrl.data.properties;
-  });
+  $ctrl.search = function () {
+    $http({
+      method: 'GET',
+      url: '/api/properties?page=0',
+      params: $ctrl.params
+    }).then(function (res) {
+      $ctrl.data = res.data;
+      $ctrl.properties = $ctrl.data.properties;
+    });
+  };
+
+  function init() {
+    $ctrl.search();
+  }
+
+  init();
 }

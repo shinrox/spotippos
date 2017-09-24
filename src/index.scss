@@ -3,7 +3,7 @@
 @import "./app/spotippo/property";
 
 @import "./app/components/header/component";
-@import "./app/components/spo-button/component";
+@import "./app/components/spo-link/component";
 
 html, body, #root {
   margin: 0;
@@ -34,20 +34,26 @@ body, h1, h2, h3 {
 .main-container {
   @extend .row;
   min-height: 100%;
+  position: relative;
 }
 
 .sidebar {
-  @extend .column;
-  flex: 1;
-  max-width: 107px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 107px;
   background-color: $twilight-blue;
   text-align: center;
   padding-top: 15px;
 }
 
 .filters {
-  @extend .column;
-  flex: 0 0 230px;
+  position: absolute;
+  left: 107px;
+  top: 0;
+  bottom: 0;
+  width: 230px;
   margin: 15px 18px;
   background-color: $white-five;
   box-shadow: 0 2px 4px 0 $black-12;
@@ -104,12 +110,17 @@ body, h1, h2, h3 {
 }
 
 .result {
-  @extend .column;
-  flex: 1;
-  margin: 15px 0px 15px 18px;
+  overflow: auto;
+  position: absolute;
+  left: 367px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: 15px;
   background-color: $white-four;
   box-shadow: 0 2px 4px 0 $black-12;
-  padding-right: 15px;
+  padding: 15px;
+  @extend .column;
 }
 
 
