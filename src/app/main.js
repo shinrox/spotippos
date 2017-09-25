@@ -4,32 +4,35 @@ module.exports = {
 };
 
 /** @ngInject */
-function Controller($http) {
+function Controller(propertyService) {
   var $ctrl = this;
 
   $ctrl.getById = function () {
     if ($ctrl.id > 0) {
-      $http({
-        method: 'GET',
-        url: '/api/properties/' + $ctrl.id
-      }).then(function (res) {
-        $ctrl.data = res.data;
-        $ctrl.properties = [$ctrl.data];
+      propertyService.getById($ctrl.id).then(function (res) {
+        $ctrl.properties = [res.data];
       });
     } else {
       $ctrl.search();
     }
   };
 
-  $ctrl.search = function () {
-    $http({
-      method: 'GET',
-      url: '/api/properties?page=0',
-      params: $ctrl.params
-    }).then(function (res) {
-      $ctrl.data = res.data;
-      $ctrl.properties = $ctrl.data.properties;
-    });
+  $ctrl.search = function (page) {
+    var params = angular.extend({}, $ctrl.params);
+
+    if (!params.page) {
+      params.page = page || 0;
+    }
+
+    propertyService
+      .search(params)
+      .then(function (res) {
+        $ctrl.properties = res.data.properties;
+        $ctrl.pagination = {
+          current: page,
+          total: Math.ceil(res.data.foundProperties / res.data.limit)
+        };
+      });
   };
 
   function init() {

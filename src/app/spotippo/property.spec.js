@@ -2,7 +2,7 @@ var angular = require('angular');
 require('angular-mocks');
 var property = require('./property');
 
-var json = {
+var propertyJson = {
   id: 1,
   title: 'Imóvel código 1, com 3 quartos e 2 banheiros.',
   price: 643000,
@@ -14,6 +14,10 @@ var json = {
   squareMeters: 61
 };
 
+function findIn(element, selector) {
+  return angular.element(element[0].querySelector(selector));
+}
+
 describe('property component', function () {
   beforeEach(function () {
     angular
@@ -22,12 +26,26 @@ describe('property component', function () {
     angular.mock.module('property');
   });
 
-  it('should render 3 elements <li>', angular.mock.inject(function ($rootScope, $compile, $httpBackend) {
-    $httpBackend.when('GET', '/api/properties').respond(properties);
-    var element = $compile('<property property="json"></property>')($rootScope);
-    $httpBackend.flush();
-    $rootScope.$digest();
-    var property = element.find('li');
-    expect(property.length).toEqual(2);
+  it('should render 3 component', angular.mock.inject(function ($rootScope, $compile) {
+    var scope = $rootScope.$new();
+    scope.property = propertyJson;
+    var element = $compile('<property property="property"></property>')(scope);
+    scope.$digest();
+
+    var id = findIn(element, 'p.property-id span');
+    expect(Number(id.html().trim())).toEqual(propertyJson.id);
+
+    var description = findIn(element, 'p.description');
+    expect(description.html().trim()).toEqual(propertyJson.description);
+
+    var area = findIn(element, '.area span');
+    expect(Number(area.html().trim())).toEqual(propertyJson.squareMeters);
+
+    var baths = findIn(element, '.baths span');
+    expect(Number(baths.html().trim())).toEqual(propertyJson.baths);
+
+    var beds = findIn(element, '.beds span');
+    expect(Number(beds.html().trim())).toEqual(propertyJson.beds);
+
   }));
 });

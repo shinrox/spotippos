@@ -52,4 +52,6 @@
   <div class="result">
     <property property="property" ng-repeat="property in $ctrl.properties"></property>
   </div>
+
+  <div class="paging" ng-if="$ctrl.pagination.total > 1" paging page="$ctrl.pagination.current"  page-size="10"  total="$ctrl.pagination.total" paging-action="$ctrl.search(page)"></div>
 </div>

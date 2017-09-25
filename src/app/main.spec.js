@@ -1,6 +1,7 @@
 var angular = require('angular');
 require('angular-mocks');
 var main = require('./main');
+var service = require('./spotippo/service');
 
 var properties = {
   properties: [
@@ -33,16 +34,19 @@ describe('main component', function () {
   beforeEach(function () {
     angular
       .module('app', ['app/main.html'])
-      .component('app', main);
+      .component('app', main)
+      .factory('propertyService', service);
     angular.mock.module('app');
   });
 
-  it('should render the header, title, techs and footer', angular.mock.inject(function ($rootScope, $compile, $httpBackend) {
-    $httpBackend.when('GET', '/api/properties?page=0').respond(properties);
+  it('should render the header and property', angular.mock.inject(function ($rootScope, $compile, $httpBackend, $log) {
+    $httpBackend.when('GET', '/api/properties').respond(properties);
 
     var element = $compile('<app>Loading...</app>')($rootScope);
+    $httpBackend.flush();
     $rootScope.$digest();
+    $log.log(element);
     expect(element.find('spotippo-header').length).toEqual(1);
-    expect(element.find('spotippo').length).toEqual(1);
+    expect(element.find('property').length).toEqual(2);
   }));
 });

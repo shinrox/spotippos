@@ -6,7 +6,7 @@ describe('footer component', function () {
   beforeEach(function () {
     angular
       .module('spotippoLink', ['app/components/spo-link/component.html'])
-      .component('spotippoLink', link);
+      .component('spoLink', link);
     angular.mock.module('spotippoLink');
   });
 
