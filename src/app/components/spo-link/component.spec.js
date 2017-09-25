@@ -13,7 +13,7 @@ describe('footer component', function () {
   it('should render \'link\'', angular.mock.inject(function ($rootScope, $compile) {
     var element = $compile('<spo-link text="Teste"></spo-link>')($rootScope);
     $rootScope.$digest();
-    var link = element.find('a');
+    var link = element.find('span');
     expect(link.html().trim()).toEqual('Teste');
   }));
 });
