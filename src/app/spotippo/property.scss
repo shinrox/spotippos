@@ -1,19 +1,18 @@
 property {
   position: relative;
-  height: 224px;
+  height: 478px;
   margin-bottom: 15px;
   width: 100%;
-
   border-radius: 2px;
   background-color: $white-four;
   box-shadow: 0 1px 3px 0 $black-30;
 
-
   .img-wrapper {
-    width: 298px;
-    height: 100%;
-    text-align: center;
+    width: 100%;
+    height: 224px;
     overflow: hidden;
+    text-align: center;
+
     img {
       width: auto;
       height: 100%;
@@ -21,11 +20,8 @@ property {
   }
 
   .info {
-    position: absolute;
-    left: 298px;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    position: relative;
+    height: 224px;
     padding: 15px;
   }
 
@@ -82,42 +78,83 @@ property {
       color: $white-four;
       background-color: $azure;
       border-radius: 0;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      margin-right: 15px;
+
+      &:hover {
+        background-color: lighten($azure, 10);
+      }
+
+      &:active {
+        background-color: darken($azure, 10);
+        outline: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
 
   }
 
   .icons {
-    flex: 3;
-    flex-direction: column;
+    flex: 1;
+    flex-direction: row;
+    display: flex;
   }
 
   .actions {
     flex: 1;
     flex-direction: column;
+    text-align: end;
   }
 
   .property-attr {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
     text-align: center;
-    margin: 0 auto;
-    padding: 10px 0;
-    display: inline-block;
-    margin-bottom: 5px;
 
     > .icon {
       font-size: 16px;
-      display: block;
-      margin: 0 auto;
+      flex: 1;
+      flex-direction: row;
     }
 
     > .text {
-      display: block;
       font-weight: bold;
       font-size: 11px;
-      margin-bottom: 0;
+      flex: 1;
+      flex-direction: row;
       line-height: 25px;
     }
   }
+}
 
 
+@media screen and (min-width: 640px) {
 
+  property {
+    height: 224px;
+
+    .img-wrapper {
+      width: 298px;
+      height: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .info {
+      position: absolute;
+      left: 298px;
+      top: 0;
+      height: auto;
+      bottom: 0;
+    }
+
+  }
 }

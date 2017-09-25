@@ -10,7 +10,7 @@
     <p class="title">Filtro</p>
 
     <form class="search form" action="" novalidate="">
-      <div class="row group">
+      <div class="group">
         <div class="column">
           <label for="id">ID</label>
           <input id="id" type="text" ng-model-options="{ debounce: 1000 }" ng-model="$ctrl.id" ng-change="$ctrl.getById()">
@@ -18,30 +18,30 @@
 
         <div class="column">
           <label for="squareMeters">ÁREA (m²)</label>
-          <input id="squareMeters" type="text" ng-model="$ctrl.params.squareMeters" ng-change="$ctrl.search()">
+          <input id="squareMeters" type="number" ng-model="$ctrl.params.squareMeters" step="1" ng-change="$ctrl.search()">
         </div>
       </div>
 
-      <div class="row group">
+      <div class="group">
         <div class="column">
           <label for="beds">QUARTOS</label>
-          <input id="beds" type="number" ng-model="$ctrl.params.beds" min="0" ng-change="$ctrl.search()">
+          <input id="beds" type="number" ng-model="$ctrl.params.beds" min="0" step="1" ng-change="$ctrl.search()">
         </div>
 
         <div class="column">
           <label for="baths">BANHEIROS</label>
-          <input id="baths" type="number" ng-model="$ctrl.params.baths" min="0" ng-change="$ctrl.search()">
+          <input id="baths" type="number" ng-model="$ctrl.params.baths" min="0" step="1" ng-change="$ctrl.search()">
         </div>
       </div>
 
 
-      <div class="row group">
+      <div class="group">
 
         <div class="column">
           <label for="minprice">VALOR</label>
           <div class="row">
-            <input class="column" id="minprice" type="number" ng-model="$ctrl.params.minprice" min="0.00" placeholder="Mínimo" ng-change="$ctrl.search()" step="0.01">
-            <input class="column" id="maxprice" type="number" ng-model="$ctrl.params.maxprice" min="$ctrl.params.minprice" placeholder="Máximo" ng-change="$ctrl.search()" step="0.01">
+            <input ui-money-mask class="column" id="minprice" type="text" ng-model="$ctrl.params.minprice" min="0.00" placeholder="Mín" ng-change="$ctrl.search()" step="0.01">
+            <input ui-money-mask class="column" id="maxprice" type="text" ng-model="$ctrl.params.maxprice" min="$ctrl.params.minprice" placeholder="Máx" ng-change="$ctrl.search()" step="0.01">
           </div>
         </div>
       </div>
