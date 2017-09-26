@@ -40,7 +40,7 @@ describe('main component', function () {
   });
 
   it('should render the header and property', angular.mock.inject(function ($rootScope, $compile, $httpBackend, $log) {
-    $httpBackend.when('GET', '/api/properties').respond(properties);
+    $httpBackend.when('GET', '/api/properties?page=0').respond(properties);
 
     var element = $compile('<app>Loading...</app>')($rootScope);
     $httpBackend.flush();

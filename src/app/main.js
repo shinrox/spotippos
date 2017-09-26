@@ -10,6 +10,7 @@ function Controller(propertyService) {
   $ctrl.getById = function () {
     if ($ctrl.id > 0) {
       propertyService.getById($ctrl.id).then(function (res) {
+        $ctrl.pagination = null;
         $ctrl.properties = [res.data];
       });
     } else {
