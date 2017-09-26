@@ -10,6 +10,7 @@
     "@types/angular-ui-router": "^1.1.36",
     "@types/jquery": "^2.0.40",
     "angular-input-masks": "^4.0.0",
+    "angular-loading-bar": "^0.9.0",
     "angular-mocks": "^1.6.2",
     "angular-paging": "^2.2.2",
     "autoprefixer": "^6.7.3",

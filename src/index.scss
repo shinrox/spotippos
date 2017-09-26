@@ -17,6 +17,18 @@ body, h1, h2, h3 {
   font-weight: 200
 }
 
+#loading-bar .bar {
+  position: absolute;
+  top: 0;
+  background: $white-four;
+  height: 2px;
+  left: 0;
+}
+
+#loading-bar .peg {
+  box-shadow: $black-10 1px 0 6px 1px;
+}
+
 .flex {
   display: flex;
 }

@@ -19,7 +19,7 @@ function findIn(element, selector) {
 }
 
 describe('property component', function () {
-  beforeEach(function () {
+  beforeEach(function() {
     angular
     .module('property', ['app/spotippo/property.html'])
     .component('property', property);
@@ -46,6 +46,5 @@ describe('property component', function () {
 
     var beds = findIn(element, '.beds span');
     expect(Number(beds.html().trim())).toEqual(propertyJson.beds);
-
   }));
 });
